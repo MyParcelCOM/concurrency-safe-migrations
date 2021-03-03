@@ -1,0 +1,31 @@
+{
+    "name": "myparcelcom/locked-migrations",
+    "description": "Provides an artisan command that runs migrations but prevents execution at the same time",
+    "type": "library",
+    "require": {
+        "php": ">=7.3",
+        "laravel/framework": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MyParcelCom\\ConcurrencySafeMigrations\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "test/"
+        }
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Yoan-Alexander Grigorov",
+            "email": "yoan@myparcel.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
