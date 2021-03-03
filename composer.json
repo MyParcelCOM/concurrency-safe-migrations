@@ -1,5 +1,5 @@
 {
-    "name": "myparcelcom/locked-migrations",
+    "name": "myparcelcom/concurrency-safe-migrations",
     "description": "Provides an artisan command that runs migrations but prevents execution at the same time",
     "type": "library",
     "require": {
