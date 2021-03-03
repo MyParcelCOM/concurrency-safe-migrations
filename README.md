@@ -22,7 +22,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \MyParcelCom\LockedMigrations\Commands\MigrateSafe::class
+        \MyParcelCom\ConcurrencySafeMigrations\Commands\Migrate::class
     ];
 
     /**
