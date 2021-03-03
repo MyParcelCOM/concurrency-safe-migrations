@@ -50,7 +50,7 @@ class Migrate extends Command
     {
         $cache = $this->hasOption('cache-store') ? Cache::store($this->option('cache-store')) : Cache::store();
 
-        if (!$cache instanceof LockProvider) {
+        if (!$cache->getStore() instanceof LockProvider) {
             throw new InvalidCacheStoreException('The selected cache store does not provide atomic locks');
         }
 
@@ -60,7 +60,7 @@ class Migrate extends Command
 
         $ttl = (int) $this->option('lock-ttl');
 
-        return $cache->lock($key, $ttl);
+        return $cache->getStore()->lock($key, $ttl);
     }
 
     private function safeMigrate(Lock $lock): Closure

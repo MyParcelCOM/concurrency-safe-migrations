@@ -7,14 +7,12 @@ namespace Tests\Commands;
 use Illuminate\Console\OutputStyle;
 use Illuminate\Contracts\Cache\Lock;
 use Illuminate\Contracts\Cache\LockProvider;
+use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Facades\Cache;
 use Mockery;
 use MyParcelCom\ConcurrencySafeMigrations\Commands\Migrate;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Console\Application;
-use Symfony\Component\Console\Helper\HelperSet;
-use Symfony\Component\Console\Input\InputDefinition;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -31,8 +29,10 @@ class MigrateTest extends TestCase
 
         Cache::shouldReceive('hasOption')->andReturnFalse();
         Cache::shouldReceive('store')->andReturn(
-            Mockery::mock(LockProvider::class, [
-                'lock' => $lockMock,
+            Mockery::mock(Repository::class, [
+                'getStore' => Mockery::mock(LockProvider::class, [
+                    'lock' => $lockMock,
+                ])
             ])
         );
 
@@ -70,8 +70,10 @@ class MigrateTest extends TestCase
 
         Cache::shouldReceive('hasOption')->andReturnFalse();
         Cache::shouldReceive('store')->andReturn(
-            Mockery::mock(LockProvider::class, [
-                'lock' => $lockMock,
+            Mockery::mock(Repository::class, [
+                'getStore' => Mockery::mock(LockProvider::class, [
+                    'lock' => $lockMock,
+                ])
             ])
         );
 
@@ -110,8 +112,10 @@ class MigrateTest extends TestCase
 
         Cache::shouldReceive('hasOption')->andReturnFalse();
         Cache::shouldReceive('store')->andReturn(
-            Mockery::mock(LockProvider::class, [
-                'lock' => $lockMock,
+            Mockery::mock(Repository::class, [
+                'getStore' => Mockery::mock(LockProvider::class, [
+                    'lock' => $lockMock,
+                ])
             ])
         );
 
