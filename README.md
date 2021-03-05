@@ -2,7 +2,7 @@
 [![Latest Stable Version](https://poser.pugx.org/myparcelcom/concurrency-safe-migrations/v)](//packagist.org/packages/myparcelcom/concurrency-safe-migrations) [![Total Downloads](https://poser.pugx.org/myparcelcom/concurrency-safe-migrations/downloads)](//packagist.org/packages/myparcelcom/concurrency-safe-migrations) [![Latest Unstable Version](https://poser.pugx.org/myparcelcom/concurrency-safe-migrations/v/unstable)](//packagist.org/packages/myparcelcom/concurrency-safe-migrations) [![License](https://poser.pugx.org/myparcelcom/concurrency-safe-migrations/license)](//packagist.org/packages/myparcelcom/concurrency-safe-migrations)
 
 ## Overview
-This library ships the command `migrate:safe` for Laravel which executed the `migrate` artisan command in concurrency-safe manner using the Laravel atomic locks.
+This library ships the command `migrate:safe` for Laravel which executes the `migrate` artisan command in concurrency-safe manner using the Laravel atomic locks.
 
 ## Installation
 
